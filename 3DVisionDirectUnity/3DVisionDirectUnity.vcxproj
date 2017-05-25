@@ -146,6 +146,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="nvapi.h" />
+    <ClInclude Include="nvapi_lite_common.h" />
+    <ClInclude Include="nvapi_lite_d3dext.h" />
+    <ClInclude Include="nvapi_lite_salend.h" />
+    <ClInclude Include="nvapi_lite_salstart.h" />
+    <ClInclude Include="nvapi_lite_sli.h" />
+    <ClInclude Include="nvapi_lite_stereo.h" />
+    <ClInclude Include="nvapi_lite_surround.h" />
+    <ClInclude Include="PlatformBase.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Unity\IUnityGraphics.h" />
+    <ClInclude Include="Unity\IUnityGraphicsD3D11.h" />
+    <ClInclude Include="Unity\IUnityInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VisionDirect.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" />
+    <None Include="RenderingPlugin.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="nvapi.lib" />
+    <Library Include="nvapi64.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

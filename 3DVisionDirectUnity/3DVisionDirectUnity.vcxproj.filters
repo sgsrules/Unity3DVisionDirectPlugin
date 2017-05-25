@@ -14,4 +14,60 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PlatformBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Unity\IUnityGraphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Unity\IUnityGraphicsD3D11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Unity\IUnityInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi_lite_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi_lite_d3dext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi_lite_salend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi_lite_salstart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi_lite_sli.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi_lite_stereo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nvapi_lite_surround.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VisionDirect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RenderingPlugin.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="nvapi.lib" />
+    <Library Include="nvapi64.lib" />
+  </ItemGroup>
 </Project>

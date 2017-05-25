@@ -1,0 +1,893 @@
+
+D3D11 DLL starting init - v 1.2.57 - Thu May 25 10:15:52 2017
+
+
+----------- d3dx.ini settings -----------
+[Logging]
+  calls=1
+  input=1
+  debug=0
+  unbuffered=0
+  force_cpu_affinity=0
+[System]
+[Device]
+  full_screen=1
+  force_stereo=2
+  get_resolution_from=swap_chain
+[Stereo]
+  automatic_mode=0
+  create_profile=0
+  force_no_nvapi=0
+[Rendering]
+  shader_hash=3dmigoto
+  cache_shaders=0
+  use_criticalsection=1
+  rasterizer_disable_scissor=1
+  export_fixed=0
+  export_shaders=0
+  export_hlsl=0
+  dump_usage=1
+  stereo_params=125
+  ini_params=120
+  override_directory=C:\CodeProjects\3DVisionDirectUnity\UnityProject\TestBuild\ShaderFixes
+  cache_directory=C:\CodeProjects\3DVisionDirectUnity\UnityProject\TestBuild\ShaderCache
+  fix_sv_position=0
+  ... missing automatic ini section
+[Hunting]
+  hunting=1
+  marking_mode=0
+  mark_snapshot=2
+  reload_config=no_modifiers VK_F10
+  toggle_hunting=no_modifiers VK_NUMPAD0
+  next_pixelshader=no_modifiers VK_NUMPAD2
+  previous_pixelshader=no_modifiers VK_NUMPAD1
+  mark_pixelshader=no_modifiers VK_NUMPAD3
+  take_screenshot=no_modifiers VK_SNAPSHOT
+  next_indexbuffer=no_modifiers VK_NUMPAD8
+  previous_indexbuffer=no_modifiers VK_NUMPAD7
+  mark_indexbuffer=no_modifiers VK_NUMPAD9
+  next_vertexshader=no_modifiers VK_NUMPAD5
+  previous_vertexshader=no_modifiers VK_NUMPAD4
+  mark_vertexshader=no_modifiers VK_NUMPAD6
+  next_rendertarget=no_modifiers VK_MULTIPLY
+  previous_rendertarget=no_modifiers VK_DIVIDE
+  mark_rendertarget=no_modifiers VK_SUBTRACT
+  done_hunting=no_modifiers VK_ADD
+  reload_fixes=no_modifiers VK_F10
+  show_original=no_modifiers VK_F9
+  analyse_options=log dump_rt_jps clear_rt
+  repeat_rate=6
+[KeyChange3DVision2SBSOutputMode]
+  type=cycle
+  Cycle 1: x7=1
+  Cycle 2: x7=2
+  Cycle 3: x7=3
+  Cycle 4: x7=4
+  Cycle 5: x7=5
+  Cycle 6: x7=0
+  Key=no_modifiers F11
+[Resource3DVision2SBSBackupTexture]
+[customshader3dvision2sbs]
+  vs=ShaderFixes/3dvision2sbsvs.hlsl
+  hs=null
+  ds=null
+  gs=null
+  ps=ShaderFixes/3dvision2sbsps.hlsl
+  blend=disable
+  cull=none
+  topology=triangle_strip
+  o1=null
+  o2=null
+  o3=null
+  o4=null
+  o5=null
+  o6=null
+  o7=null
+  od=null
+  o0=set_viewport no_view_cache bb
+  resource3dvision2sbsbackuptexture=reference ps-t100
+  ps-t100=stereo2mono bb
+  vs-t125=stereoparams
+  ps-t125=stereoparams
+  vs-t120=iniparams
+  ps-t120=iniparams
+  draw=4, 0
+  post ps-t100=reference resource3dvision2sbsbackuptexture
+[Present]
+[Constants]
+  x7=0.00
+[Profile]
+Hooked_LoadLibraryExW switching to original dll: original_nvapi64.dll to C:\Windows\system32\nvapi64.dll.
+  StereoProfile (0x701eb457) = 1 (0x00000001)
+  Stereo - Enable (0x11aa9e99) = 0x00000001 (0x00000001)
+
+NVIDIA driver version 378.92 (branch r378_78)
+
+Looking up profiles related to C:\CodeProjects\3DVisionDirectUnity\UnityProject\TestBuild\test.exe
+----------- Driver profile settings -----------
+BaseProfile "Base Profile"
+SelectedGlobalProfile "Base Profile"
+
+Profile "Base Profile"
+    ShowOn All
+    Setting ID_0x005a375c = 0x96861077 UserSpecified=true // Vertical Sync Tear Control
+    Setting ID_0x00a879cf = 0x60925292 UserSpecified=true // Vertical Sync
+    Setting ID_0x101ae763 = 0x00000000 UserSpecified=true // Flag to control smooth AFR behavior
+    Setting ID_0x10a879ac = 0x00000000 UserSpecified=true // G-SYNC
+    Setting ID_0x10a879cf = 0x00000004 UserSpecified=true // G-SYNC
+    Setting ID_0x1194f158 = 0x00000000 UserSpecified=true // Enable G-SYNC globally
+    Setting ID_0x80303a19 = 0x00000001
+    Setting ID_0x80857a28 = 0x00000001
+    Setting ID_0x809d5f60 = 0x00000001
+EndProfile
+
+Profile "test"
+    ShowOn GeForce
+    Executable "test.exe"
+    Setting ID_0x11aa9e99 = 0x00000001 UserSpecified=true // Stereo - Enable
+    Setting ID_0x701eb457 = 0x00000001 // StereoProfile
+    Setting ID_0x708db8c5 = 0x3fac4a43 // StereoConvergence = 1.34601629
+    Setting ID_0x709a1ddf = 0x00000000 // StereoCutoff
+    Setting ID_0x70edb381 = 0x00000000 // StereoTextureEnable
+EndProfile
+
+----------- End driver profile settings -----------
+No profile update required
+Replaced Hooked_LoadLibraryExW for: C:\Windows\system32\nvapi64.dll to nvapi64.dll.
+Replaced Hooked_LoadLibraryExW for: C:\Windows\system32\nvapi64.dll to nvapi64.dll.
+Replaced Hooked_LoadLibraryExW for: C:\Windows\system32\nvapi64.dll to nvapi64.dll.
+Replaced Hooked_LoadLibraryExW for: C:\Windows\system32\nvapi64.dll to nvapi64.dll.
+  NvAPI_Stereo_SetDriverMode successfully set to Direct Mode
+
+***  D3D11 DLL successfully initialized.  ***
+
+Trying to load original_d3d11.dll 
+Hooked_LoadLibraryExW switching to original dll: original_d3d11.dll to C:\Windows\system32\d3d11.dll.
+Hooked_CreateDXGIFactory1 called with riid: IDXGIFactory 
+  calling original CreateDXGIFactory1 API
+  CreateDXGIFactory1 returned factory = 00000000064B94F0, result = 0 
+  new HackerDXGIFactory1(class HackerDXGIFactory1@00000000069A41B0) wrapped 00000000064B94F0 
+HackerDXGIFactory::EnumAdapters(class HackerDXGIFactory1@00000000069A41B0) adapter 0 requested
+  created HackerDXGIAdapter wrapper = 00000000069A4150 of 0000000006233100 
+  returns result = 0 
+HackerDXGIAdapter::GetDesc(class HackerDXGIAdapter@00000000069A4150) called 
+  returns adapter: NVIDIA GeForce GTX 980 Ti, sysmem=0, vidmem=6342508544
+HackerUnknown::AddRef(class HackerDXGIAdapter@00000000069A4150), counter=2, this=00000000069A4150 
+
+
+ *** D3D11CreateDevice called with  
+    pAdapter = 00000000069A4150 
+    Flags = 0x1 
+    pFeatureLevels = 0xb100 
+    FeatureLevels = 4 
+    ppDevice = 0000000140E09B20 
+    pFeatureLevel = 0x9100 
+    ppImmediateContext = 0000000140E09B40 
+->Feature level != 11.0: 0xb100, returning E_INVALIDARG 
+
+
+ *** D3D11CreateDevice called with  
+    pAdapter = 00000000069A4150 
+    Flags = 0x1 
+    pFeatureLevels = 0xb000 
+    FeatureLevels = 3 
+    ppDevice = 0000000140E09B20 
+    pFeatureLevel = 0x9100 
+    ppImmediateContext = 0000000140E09B40 
+HackerDXGIAdapter1::GetDesc1(class HackerDXGIAdapter1@00000000069A4060) called 
+  returns adapter: NVIDIA GeForce GTX 980 Ti, sysmem=0, vidmem=6342508544, flags=0
+HackerUnknown::Release(class HackerDXGIAdapter1@00000000069A4060), counter=2, this=00000000069A4060 
+HackerDXGIObject::GetPrivateData(class HackerDXGIAdapter@00000000069A4150) called with GUID: {1D6AD054-FB2F-4000-B3AB-E873A9131A7C} 
+  returns result = 887a0002
+HackerUnknown::AddRef(class HackerDXGIAdapter@00000000069A4150), counter=3, this=00000000069A4150 
+Replaced Hooked_LoadLibraryExW for: C:\Windows\system32\nvapi64.dll to nvapi64.dll.
+HackerDXGIObject::GetPrivateData(class HackerDXGIAdapter@00000000069A4150) called with GUID: {D722FB4D-7A68-437A-B20C-5804EE2494A6} 
+  returns result = 887a0002
+HackerUnknown::Release(class HackerDXGIAdapter@00000000069A4150), counter=5, this=00000000069A4150 
+  D3D11CreateDevice returned device handle = 00000000064612C8, context handle = 000000000658CF00 
+  HackerDevice 00000000069AF250 created to wrap 00000000064612C8 
+  HackerContext 000000000646C520 created to wrap 000000000658CF00 
+HackerDevice::Create3DMigotoResources(class HackerDevice@00000000069AF250) called.  
+  created NVAPI stereo handle. Handle = 000000000697FD30 
+  creating stereo parameter texture. 
+    stereo texture created, handle = 0000000006506AD0 
+  creating stereo parameter resource view. 
+    stereo texture resource view created, handle = 0000000006D59610.
+  creating .ini constant parameter texture.
+    IniParam texture created, handle = 00000000065075D0
+  creating IniParam resource view.
+    Iniparams resource view created, handle = 0000000006D59750.
+  Created pink mode pixel shader: 0 
+->D3D11CreateDevice result = 0, device handle = 00000000064612C8, device wrapper = 00000000069AF250, context handle = 000000000658CF00, context wrapper = 000000000646C520 
+
+  returns E_NOINTERFACE as error for ID3D11Device1 (try allow_platform_update=1 if the game refuses to run). 
+***  returns E_NOINTERFACE as error for ID3D11DeviceContext1 (try allow_platform_update=1 if the game refuses to run). 
+  failed result = 80004002 for 0000000140E09B30 
+  failed result = 80004002 for 0000000140E09B50 
+HackerDXGIFactory::QueryInterface(class HackerDXGIFactory1@00000000069A41B0) called with IID: IDXGIFactory2 
+***  returns E_NOINTERFACE as error for IDXGIFactory2. 
+  failed result = 80004002 for 0000000140E09B38 
+HackerDXGIDevice::GetAdapter(class HackerDXGIDevice1@000000000624D430) called with: 00000000001BEC58 
+  created HackerDXGIAdapter wrapper = 00000000069A21A0 of 0000000006233100 
+  returns result = 0 
+HackerDXGIAdapter::GetDesc(class HackerDXGIAdapter@00000000069A21A0) called 
+  returns adapter: NVIDIA GeForce GTX 980 Ti, sysmem=0, vidmem=6342508544
+HackerUnknown::Release(class HackerDXGIAdapter@00000000069A21A0), counter=4, this=00000000069A21A0 
+HackerUnknown::Release(class HackerDXGIDevice1@000000000624D430), counter=9, this=000000000624D430 
+HackerDevice::GetFeatureLevel(class HackerDevice@00000000069AF250) returns FeatureLevel:b000 
+Hooked_CreateDXGIFactory called with riid: IDXGIFactory 
+  calling original CreateDXGIFactory API
+  CreateDXGIFactory1 returned factory = 0000000006484250, result = 0 
+  new HackerDXGIFactory1(class HackerDXGIFactory1@00000000069A21D0) wrapped 0000000006484250 
+HackerDXGIFactory::EnumAdapters(class HackerDXGIFactory1@00000000069A21D0) adapter 0 requested
+  created HackerDXGIAdapter wrapper = 00000000069A2020 of 000000000624F2C0 
+  returns result = 0 
+HackerDXGIAdapter::GetDesc(class HackerDXGIAdapter@00000000069A2020) called 
+  returns adapter: NVIDIA GeForce GTX 980 Ti, sysmem=0, vidmem=6342508544
+HackerUnknown::Release(class HackerDXGIAdapter@00000000069A2020), counter=0, this=00000000069A2020 
+  counter=0, this=00000000069A2020, deleting self. 
+HackerUnknown::Release(class HackerDXGIFactory1@00000000069A21D0), counter=0, this=00000000069A21D0 
+  counter=0, this=00000000069A21D0, deleting self. 
+HackerDevice::CreateTexture3D called with parameters
+  InitialData = 0000000000000000, hash = 7a832640 
+  returns result = 0
+HackerDevice::CreateTexture3D called with parameters
+  InitialData = 0000000000000000, hash = 28c1759b 
+  returns result = 0
+HackerDevice::CreateVertexShader called with BytecodeLength = 532, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 55da5eab238de808
+    shader registered for possible reloading: 55da5eab238de808_vs as bin -  
+  returns result = 0, handle = 0000000006509418
+HackerDevice::CreatePixelShader called with BytecodeLength = 212, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 8a092752af82b346
+    shader registered for possible reloading: 8a092752af82b346_ps as bin -  
+  returns result = 0, handle = 0000000006509518
+HackerDevice::CreateVertexShader called with BytecodeLength = 1112, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 4c9936f7f1d28f6e
+    shader registered for possible reloading: 4c9936f7f1d28f6e_vs as bin -  
+  returns result = 0, handle = 0000000006509E98
+HackerDevice::CreatePixelShader called with BytecodeLength = 3192, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2022ff061146c7c0
+    shader registered for possible reloading: 2022ff061146c7c0_ps as bin -  
+  returns result = 0, handle = 0000000006509FD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3b534af100f625da
+    shader registered for possible reloading: 3b534af100f625da_vs as bin -  
+  returns result = 0, handle = 000000000650A118
+HackerDevice::CreatePixelShader called with BytecodeLength = 344, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 19989ca756844f98
+    shader registered for possible reloading: 19989ca756844f98_ps as bin -  
+  returns result = 0, handle = 000000000650A258
+HackerDevice::CreateVertexShader called with BytecodeLength = 1112, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 4c9936f7f1d28f6e
+    shader registered for possible reloading: 4c9936f7f1d28f6e_vs as bin -  
+  returns result = 0, handle = 000000000650A358
+HackerDevice::CreatePixelShader called with BytecodeLength = 2912, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 021f8e81dfc349dc
+    shader registered for possible reloading: 021f8e81dfc349dc_ps as bin -  
+  returns result = 0, handle = 000000000650A498
+HackerDevice::CreateVertexShader called with BytecodeLength = 744, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = b0877e07ea9f2078
+    shader registered for possible reloading: b0877e07ea9f2078_vs as bin -  
+  returns result = 0, handle = 000000000650A5D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 344, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 53a60d32a7f3e21e
+    shader registered for possible reloading: 53a60d32a7f3e21e_ps as bin -  
+  returns result = 0, handle = 000000000650A718
+HackerDevice::CreateVertexShader called with BytecodeLength = 1252, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2917d6a2498642c6
+    shader registered for possible reloading: 2917d6a2498642c6_vs as bin -  
+  returns result = 0, handle = 0000000006B71458
+HackerDevice::CreatePixelShader called with BytecodeLength = 2128, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 561f3d9ba6c571d0
+    shader registered for possible reloading: 561f3d9ba6c571d0_ps as bin -  
+  returns result = 0, handle = 0000000006B71598
+HackerDevice::CreateVertexShader called with BytecodeLength = 1252, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2917d6a2498642c6
+    shader registered for possible reloading: 2917d6a2498642c6_vs as bin -  
+  returns result = 0, handle = 0000000006B71698
+HackerDevice::CreatePixelShader called with BytecodeLength = 2008, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 8622d44371a7c3f1
+    shader registered for possible reloading: 8622d44371a7c3f1_ps as bin -  
+  returns result = 0, handle = 0000000006B717D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 1252, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2917d6a2498642c6
+    shader registered for possible reloading: 2917d6a2498642c6_vs as bin -  
+  returns result = 0, handle = 0000000006B71918
+HackerDevice::CreatePixelShader called with BytecodeLength = 4056, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 6e897a1a2f4fd103
+    shader registered for possible reloading: 6e897a1a2f4fd103_ps as bin -  
+  returns result = 0, handle = 0000000006B71A58
+HackerDevice::CreateVertexShader called with BytecodeLength = 1252, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2917d6a2498642c6
+    shader registered for possible reloading: 2917d6a2498642c6_vs as bin -  
+  returns result = 0, handle = 0000000006B71B58
+HackerDevice::CreatePixelShader called with BytecodeLength = 3936, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 055f4e043db527d4
+    shader registered for possible reloading: 055f4e043db527d4_ps as bin -  
+  returns result = 0, handle = 0000000006B71C98
+HackerDevice::CreateVertexShader called with BytecodeLength = 1112, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 4c9936f7f1d28f6e
+    shader registered for possible reloading: 4c9936f7f1d28f6e_vs as bin -  
+  returns result = 0, handle = 0000000006B71DD8
+HackerDevice::CreatePixelShader called with BytecodeLength = 2084, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 7653eb72739fefcd
+    shader registered for possible reloading: 7653eb72739fefcd_ps as bin -  
+  returns result = 0, handle = 0000000006B71F18
+HackerDevice::CreateVertexShader called with BytecodeLength = 1112, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 4c9936f7f1d28f6e
+    shader registered for possible reloading: 4c9936f7f1d28f6e_vs as bin -  
+  returns result = 0, handle = 0000000006B72018
+HackerDevice::CreatePixelShader called with BytecodeLength = 2060, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 199a540df8df8cf9
+    shader registered for possible reloading: 199a540df8df8cf9_ps as bin -  
+  returns result = 0, handle = 0000000006B72158
+HackerDevice::CreateVertexShader called with BytecodeLength = 1544, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 355bd424bff4b560
+    shader registered for possible reloading: 355bd424bff4b560_vs as bin -  
+  returns result = 0, handle = 0000000006B72298
+HackerDevice::CreatePixelShader called with BytecodeLength = 472, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 60fe34f3b8743388
+    shader registered for possible reloading: 60fe34f3b8743388_ps as bin -  
+  returns result = 0, handle = 0000000006B723D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 1652, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = e6dc069e7181d96e
+    shader registered for possible reloading: e6dc069e7181d96e_vs as bin -  
+  returns result = 0, handle = 0000000006B724D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 676, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = e8780e7ffb7de98c
+    shader registered for possible reloading: e8780e7ffb7de98c_ps as bin -  
+  returns result = 0, handle = 0000000006B72618
+HackerDevice::CreateVertexShader called with BytecodeLength = 2884, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d3f1ba75bedb8d96
+    shader registered for possible reloading: d3f1ba75bedb8d96_vs as bin -  
+  returns result = 0, handle = 0000000006B72758
+HackerDevice::CreatePixelShader called with BytecodeLength = 496, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a54f34dd58d03f32
+    shader registered for possible reloading: a54f34dd58d03f32_ps as bin -  
+  returns result = 0, handle = 0000000006B72898
+HackerDevice::CreateVertexShader called with BytecodeLength = 3188, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 181929edf7e61ab3
+    shader registered for possible reloading: 181929edf7e61ab3_vs as bin -  
+  returns result = 0, handle = 0000000006B72998
+HackerDevice::CreatePixelShader called with BytecodeLength = 664, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 206d094787c06b0f
+    shader registered for possible reloading: 206d094787c06b0f_ps as bin -  
+  returns result = 0, handle = 0000000006B72AD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 1972, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d60c20b9f339ca0c
+    shader registered for possible reloading: d60c20b9f339ca0c_vs as bin -  
+  returns result = 0, handle = 0000000006B72C18
+HackerDevice::CreatePixelShader called with BytecodeLength = 472, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 60fe34f3b8743388
+    shader registered for possible reloading: 60fe34f3b8743388_ps as bin -  
+  returns result = 0, handle = 0000000006B72D58
+HackerDevice::CreateVertexShader called with BytecodeLength = 2072, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = c75c6774b9f48b6d
+    shader registered for possible reloading: c75c6774b9f48b6d_vs as bin -  
+  returns result = 0, handle = 0000000006B72E58
+HackerDevice::CreatePixelShader called with BytecodeLength = 664, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = dd97fcf4ac8181e8
+    shader registered for possible reloading: dd97fcf4ac8181e8_ps as bin -  
+  returns result = 0, handle = 0000000006B72F98
+HackerDevice::CreateVertexShader called with BytecodeLength = 2096, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 048e4e3f832efad2
+    shader registered for possible reloading: 048e4e3f832efad2_vs as bin -  
+  returns result = 0, handle = 0000000006B730D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 664, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = dd97fcf4ac8181e8
+    shader registered for possible reloading: dd97fcf4ac8181e8_ps as bin -  
+  returns result = 0, handle = 0000000006B73218
+HackerDevice::CreateVertexShader called with BytecodeLength = 1484, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = ca22dd01108d528b
+    shader registered for possible reloading: ca22dd01108d528b_vs as bin -  
+  returns result = 0, handle = 0000000006456218
+HackerDevice::CreatePixelShader called with BytecodeLength = 640, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = e454bf87739d7de5
+    shader registered for possible reloading: e454bf87739d7de5_ps as bin -  
+  returns result = 0, handle = 0000000006456358
+HackerDevice::CreateVertexShader called with BytecodeLength = 3112, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = ddc2739eb3949842
+    shader registered for possible reloading: ddc2739eb3949842_vs as bin -  
+  returns result = 0, handle = 0000000006456498
+HackerDevice::CreatePixelShader called with BytecodeLength = 712, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = ed5ef82f90d21ada
+    shader registered for possible reloading: ed5ef82f90d21ada_ps as bin -  
+  returns result = 0, handle = 0000000006456598
+HackerDevice::CreateVertexShader called with BytecodeLength = 2956, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = c791d5cc8bc9471d
+    shader registered for possible reloading: c791d5cc8bc9471d_vs as bin -  
+  returns result = 0, handle = 00000000064566D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 712, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = ed5ef82f90d21ada
+    shader registered for possible reloading: ed5ef82f90d21ada_ps as bin -  
+  returns result = 0, handle = 0000000006456818
+HackerDevice::CreateVertexShader called with BytecodeLength = 1312, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d57ca488783a4cca
+    shader registered for possible reloading: d57ca488783a4cca_vs as bin -  
+  returns result = 0, handle = 0000000006456958
+HackerDevice::CreatePixelShader called with BytecodeLength = 704, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2358bf99e643714c
+    shader registered for possible reloading: 2358bf99e643714c_ps as bin -  
+  returns result = 0, handle = 0000000006456A58
+HackerDevice::CreateVertexShader called with BytecodeLength = 840, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 99fb654c8d14d422
+    shader registered for possible reloading: 99fb654c8d14d422_vs as bin -  
+  returns result = 0, handle = 0000000006456B98
+HackerDevice::CreatePixelShader called with BytecodeLength = 1340, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3315a135238852b3
+    shader registered for possible reloading: 3315a135238852b3_ps as bin -  
+  returns result = 0, handle = 0000000006456CD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 840, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 99fb654c8d14d422
+    shader registered for possible reloading: 99fb654c8d14d422_vs as bin -  
+  returns result = 0, handle = 0000000006456E18
+HackerDevice::CreatePixelShader called with BytecodeLength = 1396, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a26e09b7ac1ce891
+    shader registered for possible reloading: a26e09b7ac1ce891_ps as bin -  
+  returns result = 0, handle = 0000000006456F18
+HackerDevice::CreateVertexShader called with BytecodeLength = 784, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d9c39305ed8c0b2a
+    shader registered for possible reloading: d9c39305ed8c0b2a_vs as bin -  
+  returns result = 0, handle = 0000000006457058
+HackerDevice::CreatePixelShader called with BytecodeLength = 388, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 8cbe89127cc5907e
+    shader registered for possible reloading: 8cbe89127cc5907e_ps as bin -  
+  returns result = 0, handle = 0000000006457198
+HackerDevice::CreateVertexShader called with BytecodeLength = 784, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d9c39305ed8c0b2a
+    shader registered for possible reloading: d9c39305ed8c0b2a_vs as bin -  
+  returns result = 0, handle = 00000000064572D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 368, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 0503f9d284e9d42a
+    shader registered for possible reloading: 0503f9d284e9d42a_ps as bin -  
+  returns result = 0, handle = 00000000064573D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 1880, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 182d5ce5e4d27df7
+    shader registered for possible reloading: 182d5ce5e4d27df7_vs as bin -  
+  returns result = 0, handle = 0000000006457518
+HackerDevice::CreatePixelShader called with BytecodeLength = 1280, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 6bd925aacce97e65
+    shader registered for possible reloading: 6bd925aacce97e65_ps as bin -  
+  returns result = 0, handle = 0000000006457658
+HackerDevice::CreateVertexShader called with BytecodeLength = 1212, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = eca87ada1b6f621f
+    shader registered for possible reloading: eca87ada1b6f621f_vs as bin -  
+  returns result = 0, handle = 0000000006457798
+HackerDevice::CreatePixelShader called with BytecodeLength = 1580, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 89fb1985250f47fd
+    shader registered for possible reloading: 89fb1985250f47fd_ps as bin -  
+  returns result = 0, handle = 0000000006457898
+HackerDevice::CreateVertexShader called with BytecodeLength = 1036, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 886009a542036c71
+    shader registered for possible reloading: 886009a542036c71_vs as bin -  
+  returns result = 0, handle = 00000000064579D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 332, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = c772ec06f24df2fb
+    shader registered for possible reloading: c772ec06f24df2fb_ps as bin -  
+  returns result = 0, handle = 0000000006457B18
+HackerDevice::CreateVertexShader called with BytecodeLength = 2016, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 90eee6fe78775190
+    shader registered for possible reloading: 90eee6fe78775190_vs as bin -  
+  returns result = 0, handle = 0000000006457C58
+HackerDevice::CreatePixelShader called with BytecodeLength = 660, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3a66757824d5105b
+    shader registered for possible reloading: 3a66757824d5105b_ps as bin -  
+  returns result = 0, handle = 0000000006457D58
+HackerDevice::CreateVertexShader called with BytecodeLength = 1880, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = e7f0c8630930a677
+    shader registered for possible reloading: e7f0c8630930a677_vs as bin -  
+  returns result = 0, handle = 0000000006457E98
+HackerDevice::CreatePixelShader called with BytecodeLength = 800, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 0b001ffc13cfda12
+    shader registered for possible reloading: 0b001ffc13cfda12_ps as bin -  
+  returns result = 0, handle = 0000000006457FD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 1372, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 446ae20993c131f9
+    shader registered for possible reloading: 446ae20993c131f9_vs as bin -  
+  returns result = 0, handle = 0000000006D1B258
+HackerDevice::CreatePixelShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = e6530d7c80392e88
+    shader registered for possible reloading: e6530d7c80392e88_ps as bin -  
+  returns result = 0, handle = 0000000006D1B358
+HackerDevice::CreateVertexShader called with BytecodeLength = 3288, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 7ec8d99950e63bdf
+    shader registered for possible reloading: 7ec8d99950e63bdf_vs as bin -  
+  returns result = 0, handle = 0000000006D1B498
+HackerDevice::CreatePixelShader called with BytecodeLength = 472, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 72b7a33e58a3c5da
+    shader registered for possible reloading: 72b7a33e58a3c5da_ps as bin -  
+  returns result = 0, handle = 0000000006D1B5D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 888, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = abf6253add0a62d2
+    shader registered for possible reloading: abf6253add0a62d2_vs as bin -  
+  returns result = 0, handle = 0000000006D1B718
+HackerDevice::CreatePixelShader called with BytecodeLength = 552, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = ff90d3e84724510a
+    shader registered for possible reloading: ff90d3e84724510a_ps as bin -  
+  returns result = 0, handle = 0000000006D1B818
+HackerDevice::CreateVertexShader called with BytecodeLength = 968, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = c10039042b990b09
+    shader registered for possible reloading: c10039042b990b09_vs as bin -  
+  returns result = 0, handle = 0000000006D1B958
+HackerDevice::CreatePixelShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 43188e7b540d35fb
+    shader registered for possible reloading: 43188e7b540d35fb_ps as bin -  
+  returns result = 0, handle = 0000000006D1BA98
+HackerDevice::CreateVertexShader called with BytecodeLength = 1408, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d52fd4f68151675b
+    shader registered for possible reloading: d52fd4f68151675b_vs as bin -  
+  returns result = 0, handle = 0000000006D1BBD8
+HackerDevice::CreatePixelShader called with BytecodeLength = 212, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 0c69f0c42d4ac0be
+    shader registered for possible reloading: 0c69f0c42d4ac0be_ps as bin -  
+  returns result = 0, handle = 0000000006D1BCD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 676, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 41c6e8dde129ef2c
+    shader registered for possible reloading: 41c6e8dde129ef2c_vs as bin -  
+  returns result = 0, handle = 0000000006D1BE18
+HackerDevice::CreatePixelShader called with BytecodeLength = 13220, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3d62dc0837d582e3
+    shader registered for possible reloading: 3d62dc0837d582e3_ps as bin -  
+  returns result = 0, handle = 0000000006D1BF58
+HackerDevice::CreateVertexShader called with BytecodeLength = 676, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 41c6e8dde129ef2c
+    shader registered for possible reloading: 41c6e8dde129ef2c_vs as bin -  
+  returns result = 0, handle = 0000000006D1C098
+HackerDevice::CreatePixelShader called with BytecodeLength = 320, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 80df1b3b826b6a7f
+    shader registered for possible reloading: 80df1b3b826b6a7f_ps as bin -  
+  returns result = 0, handle = 0000000006D1C198
+HackerDevice::CreateVertexShader called with BytecodeLength = 676, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 41c6e8dde129ef2c
+    shader registered for possible reloading: 41c6e8dde129ef2c_vs as bin -  
+  returns result = 0, handle = 0000000006D1C2D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 320, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = e7ec0322be395449
+    shader registered for possible reloading: e7ec0322be395449_ps as bin -  
+  returns result = 0, handle = 0000000006D1C418
+HackerDevice::CreateVertexShader called with BytecodeLength = 676, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 41c6e8dde129ef2c
+    shader registered for possible reloading: 41c6e8dde129ef2c_vs as bin -  
+  returns result = 0, handle = 0000000006D1C558
+HackerDevice::CreatePixelShader called with BytecodeLength = 320, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = e7ec0322be395449
+    shader registered for possible reloading: e7ec0322be395449_ps as bin -  
+  returns result = 0, handle = 0000000006D1C658
+HackerDevice::CreateVertexShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 7c19a2fc51c1bc20
+    shader registered for possible reloading: 7c19a2fc51c1bc20_vs as bin -  
+  returns result = 0, handle = 0000000006D1C798
+HackerDevice::CreatePixelShader called with BytecodeLength = 732, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 6b5fa542eec46f78
+    shader registered for possible reloading: 6b5fa542eec46f78_ps as bin -  
+  returns result = 0, handle = 0000000006D1C8D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 7c19a2fc51c1bc20
+    shader registered for possible reloading: 7c19a2fc51c1bc20_vs as bin -  
+  returns result = 0, handle = 0000000006D1CA18
+HackerDevice::CreatePixelShader called with BytecodeLength = 732, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 6b5fa542eec46f78
+    shader registered for possible reloading: 6b5fa542eec46f78_ps as bin -  
+  returns result = 0, handle = 0000000006D1CB18
+HackerDevice::CreateVertexShader called with BytecodeLength = 828, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = c387145bd2cf25f7
+    shader registered for possible reloading: c387145bd2cf25f7_vs as bin -  
+  returns result = 0, handle = 0000000006D1CC58
+HackerDevice::CreatePixelShader called with BytecodeLength = 660, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 8e20e7038ebc5eae
+    shader registered for possible reloading: 8e20e7038ebc5eae_ps as bin -  
+  returns result = 0, handle = 0000000006D1CD98
+HackerDevice::CreateVertexShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3b534af100f625da
+    shader registered for possible reloading: 3b534af100f625da_vs as bin -  
+  returns result = 0, handle = 0000000006D1CED8
+HackerDevice::CreatePixelShader called with BytecodeLength = 736, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d1449763598e83d6
+    shader registered for possible reloading: d1449763598e83d6_ps as bin -  
+  returns result = 0, handle = 0000000006D1CFD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3b534af100f625da
+    shader registered for possible reloading: 3b534af100f625da_vs as bin -  
+  returns result = 0, handle = 0000000006A95758
+HackerDevice::CreatePixelShader called with BytecodeLength = 872, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3ed8f017555aba66
+    shader registered for possible reloading: 3ed8f017555aba66_ps as bin -  
+  returns result = 0, handle = 0000000006A95898
+HackerDevice::CreateVertexShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3b534af100f625da
+    shader registered for possible reloading: 3b534af100f625da_vs as bin -  
+  returns result = 0, handle = 0000000006A95998
+HackerDevice::CreatePixelShader called with BytecodeLength = 908, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3fe6ddf3fbca87ac
+    shader registered for possible reloading: 3fe6ddf3fbca87ac_ps as bin -  
+  returns result = 0, handle = 0000000006A95AD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 644, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 3b534af100f625da
+    shader registered for possible reloading: 3b534af100f625da_vs as bin -  
+  returns result = 0, handle = 0000000006A95C18
+HackerDevice::CreatePixelShader called with BytecodeLength = 368, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 7bcc9bdf3689f07a
+    shader registered for possible reloading: 7bcc9bdf3689f07a_ps as bin -  
+  returns result = 0, handle = 0000000006A95D58
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 77d36be54a7e971e
+    shader registered for possible reloading: 77d36be54a7e971e_vs as bin -  
+  returns result = 0, handle = 0000000006A95E58
+HackerDevice::CreatePixelShader called with BytecodeLength = 368, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 7bcc9bdf3689f07a
+    shader registered for possible reloading: 7bcc9bdf3689f07a_ps as bin -  
+  returns result = 0, handle = 0000000006A95F98
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 77d36be54a7e971e
+    shader registered for possible reloading: 77d36be54a7e971e_vs as bin -  
+  returns result = 0, handle = 0000000006A960D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 476, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 8dbf69c3556c51ae
+    shader registered for possible reloading: 8dbf69c3556c51ae_ps as bin -  
+  returns result = 0, handle = 0000000006A96218
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 77d36be54a7e971e
+    shader registered for possible reloading: 77d36be54a7e971e_vs as bin -  
+  returns result = 0, handle = 0000000006A96458
+HackerDevice::CreatePixelShader called with BytecodeLength = 1232, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 44e3320f5a50ac13
+    shader registered for possible reloading: 44e3320f5a50ac13_ps as bin -  
+  returns result = 0, handle = 0000000006A96598
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 77d36be54a7e971e
+    shader registered for possible reloading: 77d36be54a7e971e_vs as bin -  
+  returns result = 0, handle = 0000000006A966D8
+HackerDevice::CreatePixelShader called with BytecodeLength = 1392, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = ff068eb14431987f
+    shader registered for possible reloading: ff068eb14431987f_ps as bin -  
+  returns result = 0, handle = 0000000006A967D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 532, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 55da5eab238de808
+    shader registered for possible reloading: 55da5eab238de808_vs as bin -  
+  returns result = 0, handle = 0000000006A96918
+HackerDevice::CreatePixelShader called with BytecodeLength = 176, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2b1e982392fa63ca
+    shader registered for possible reloading: 2b1e982392fa63ca_ps as bin -  
+  returns result = 0, handle = 0000000006A96A58
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = fda6e65942630566
+    shader registered for possible reloading: fda6e65942630566_vs as bin -  
+  returns result = 0, handle = 0000000006A96B98
+HackerDevice::CreatePixelShader called with BytecodeLength = 968, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = bae2b5372cc96f9a
+    shader registered for possible reloading: bae2b5372cc96f9a_ps as bin -  
+  returns result = 0, handle = 0000000006A96C98
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = fda6e65942630566
+    shader registered for possible reloading: fda6e65942630566_vs as bin -  
+  returns result = 0, handle = 0000000006A96DD8
+HackerDevice::CreatePixelShader called with BytecodeLength = 348, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 4628e1a3a9df9736
+    shader registered for possible reloading: 4628e1a3a9df9736_ps as bin -  
+  returns result = 0, handle = 0000000006A96F18
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = fda6e65942630566
+    shader registered for possible reloading: fda6e65942630566_vs as bin -  
+  returns result = 0, handle = 0000000006A97058
+HackerDevice::CreatePixelShader called with BytecodeLength = 292, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d5e31fd5febae6c7
+    shader registered for possible reloading: d5e31fd5febae6c7_ps as bin -  
+  returns result = 0, handle = 0000000006A97158
+HackerDevice::CreateVertexShader called with BytecodeLength = 1076, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2318cf9fb8992829
+    shader registered for possible reloading: 2318cf9fb8992829_vs as bin -  
+  returns result = 0, handle = 0000000006A97298
+HackerDevice::CreatePixelShader called with BytecodeLength = 516, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 5738c8b1a51cbe9d
+    shader registered for possible reloading: 5738c8b1a51cbe9d_ps as bin -  
+  returns result = 0, handle = 0000000006A973D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 1088, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 86901a8204230f5a
+    shader registered for possible reloading: 86901a8204230f5a_vs as bin -  
+  returns result = 0, handle = 0000000006A97518
+HackerDevice::CreatePixelShader called with BytecodeLength = 516, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 8b31e34af61becb6
+    shader registered for possible reloading: 8b31e34af61becb6_ps as bin -  
+  returns result = 0, handle = 0000000006C6F418
+HackerDevice::CreateVertexShader called with BytecodeLength = 784, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d9c39305ed8c0b2a
+    shader registered for possible reloading: d9c39305ed8c0b2a_vs as bin -  
+  returns result = 0, handle = 0000000006C6F558
+HackerDevice::CreatePixelShader called with BytecodeLength = 396, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 0604bc2b6f888e19
+    shader registered for possible reloading: 0604bc2b6f888e19_ps as bin -  
+  returns result = 0, handle = 0000000006C6F658
+HackerDevice::CreateVertexShader called with BytecodeLength = 1076, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2318cf9fb8992829
+    shader registered for possible reloading: 2318cf9fb8992829_vs as bin -  
+  returns result = 0, handle = 0000000006C6F798
+HackerDevice::CreatePixelShader called with BytecodeLength = 496, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d5844fdc71eab2af
+    shader registered for possible reloading: d5844fdc71eab2af_ps as bin -  
+  returns result = 0, handle = 0000000006C6F8D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 1296, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = ec628e14a7a2ac0d
+    shader registered for possible reloading: ec628e14a7a2ac0d_vs as bin -  
+  returns result = 0, handle = 0000000006C6FA18
+HackerDevice::CreatePixelShader called with BytecodeLength = 292, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = d8ec2293f94ec0aa
+    shader registered for possible reloading: d8ec2293f94ec0aa_ps as bin -  
+  returns result = 0, handle = 0000000006C6FB18
+HackerDevice::CreateVertexShader called with BytecodeLength = 684, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = fda6e65942630566
+    shader registered for possible reloading: fda6e65942630566_vs as bin -  
+  returns result = 0, handle = 0000000006C6FC58
+HackerDevice::CreatePixelShader called with BytecodeLength = 360, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 29f04bd87941ab2f
+    shader registered for possible reloading: 29f04bd87941ab2f_ps as bin -  
+  returns result = 0, handle = 0000000006C6FD98
+HackerDevice::CreateVertexShader called with BytecodeLength = 820, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = dc88077eb60add33
+    shader registered for possible reloading: dc88077eb60add33_vs as bin -  
+  returns result = 0, handle = 0000000006C6FED8
+HackerDevice::CreatePixelShader called with BytecodeLength = 416, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = f73b4e715a508828
+    shader registered for possible reloading: f73b4e715a508828_ps as bin -  
+  returns result = 0, handle = 0000000006C6FFD8
+Hooked_CreateDXGIFactory called with riid: IDXGIFactory 
+  calling original CreateDXGIFactory API
+  CreateDXGIFactory1 returned factory = 0000000006C7AD00, result = 0 
+  new HackerDXGIFactory1(class HackerDXGIFactory1@000000000642C320) wrapped 0000000006C7AD00 
+HackerDXGIFactory::EnumAdapters(class HackerDXGIFactory1@000000000642C320) adapter 0 requested
+  created HackerDXGIAdapter wrapper = 000000000642C350 of 0000000006C7A1B0 
+  returns result = 0 
+HackerDXGIAdapter::EnumOutputs(class HackerDXGIAdapter@000000000642C350) called: output #0 requested
+  returns result = 0, handle = 00000000072493C0
+HackerDXGIAdapter::EnumOutputs(class HackerDXGIAdapter@000000000642C350) called: output #1 requested
+  returns result = 0, handle = 00000000072493C0
+HackerDXGIAdapter::EnumOutputs(class HackerDXGIAdapter@000000000642C350) called: output #2 requested
+  returns result = 0, handle = 00000000072493C0
+HackerDXGIAdapter::EnumOutputs(class HackerDXGIAdapter@000000000642C350) called: output #3 requested
+  returns result = 887a0002, handle = 0000000000000000
+HackerUnknown::Release(class HackerDXGIAdapter@000000000642C350), counter=0, this=000000000642C350 
+  counter=0, this=000000000642C350, deleting self. 
+HackerDXGIFactory::EnumAdapters(class HackerDXGIFactory1@000000000642C320) adapter 1 requested
+  returns result = 0x887a0002 
+HackerUnknown::Release(class HackerDXGIFactory1@000000000642C320), counter=0, this=000000000642C320 
+  counter=0, this=000000000642C320, deleting self. 
+
+ *** HackerDXGIFactory::CreateSwapChain(class HackerDXGIFactory1@00000000069A41B0) called with parameters 
+  Device = class HackerDevice@00000000069AF250 
+  SwapChain = 00000000033D11A0 
+  Description = 00000000001BEFF0 
+     Windowed = 1 
+     Width = 1280 
+     Height = 720 
+     Refresh rate = 0.000000 
+->Forcing Windowed to = 0 
+->Direct Mode: Forcing Width to = 2560 
+HackerDevice::GetHackerContext returns 000000000646C520 
+Overlay::Overlay created for 0000000006C73740: class HackerDXGISwapChain 
+  on HackerDevice: 00000000069AF250, HackerContext: 000000000646C520 
+->HackerDXGISwapChain 0000000006C73740 created to wrap 0000000007246980 
+Got resolution from swap chain: 2560x720
+->return value = 0 
+
+HackerDXGIFactory::MakeWindowAssociation(class HackerDXGIFactory1@00000000069A41B0) called with WindowHandle = 0000000000090BC6, Flags = 3
+  Flags = DXGI_MWA_NO_WINDOW_CHANGES(no monitoring) DXGI_MWA_NO_ALT_ENTER
+  returns result = 0
+HackerDXGISwapChain::ResizeTarget(class HackerDXGISwapChain@0000000006C73740) called 
+  returns result = 0
+HackerDXGISwapChain::SetFullscreenState(class HackerDXGISwapChain@0000000006C73740) called with
+  Fullscreen = 0
+  Target = 0000000000000000
+->Fullscreen forced = 1 
+  returns 0
+HackerDXGISwapChain::ResizeBuffers(class HackerDXGISwapChain@0000000006C73740) called 
+Got resolution from swap chain: 1920x1080
+  returns result = 0
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006C70BD8
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006C70D18
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006C70E18
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006C70F58
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006C71098
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006C711D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006EE4498
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006EE45D8
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006EE4718
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006EE4818
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006EE4958
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006EE4A98
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006EE4BD8
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006EE4CD8
+HackerDevice::CreateVertexShader called with BytecodeLength = 636, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = a3cf8f84671cf15f
+    shader registered for possible reloading: a3cf8f84671cf15f_vs as bin -  
+  returns result = 0, handle = 0000000006EE4E18
+HackerDevice::CreatePixelShader called with BytecodeLength = 244, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2da42e2681f7e662
+    shader registered for possible reloading: 2da42e2681f7e662_ps as bin -  
+  returns result = 0, handle = 0000000006EE4F58
+  updating stereo texture with eyeSeparation = 1.492823e-001, separation = 1.500000e+001, convergence = 1.346016e+000, active = 1
+  nvapi fetched screen width: 1920.000000, height: 1080.000000
+Replaced Hooked_LoadLibraryExW for: C:\Windows\system32\nvapi64.dll to nvapi64.dll.
+  failed result = 80004002 for 00000000001BE7C0 
+  failed result = 80004002 for 00000000001BE7C8 
+HackerDXGIDevice::GetAdapter(class HackerDXGIDevice1@000000000624D430) called with: 00000000001BE528 
+  created HackerDXGIAdapter wrapper = 000000000732EE00 of 0000000006233100 
+  returns result = 0 
+HackerDXGIAdapter::GetDesc(class HackerDXGIAdapter@000000000732EE00) called 
+  returns adapter: NVIDIA GeForce GTX 980 Ti, sysmem=0, vidmem=6342508544
+HackerUnknown::Release(class HackerDXGIAdapter@000000000732EE00), counter=5, this=000000000732EE00 
+HackerUnknown::Release(class HackerDXGIDevice1@000000000624D430), counter=5028, this=000000000624D430 
+HackerDevice::CreateVertexShader called with BytecodeLength = 1252, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2917d6a2498642c6
+    shader registered for possible reloading: 2917d6a2498642c6_vs as bin -  
+  returns result = 0, handle = 0000000006F40ED8
+HackerDevice::CreatePixelShader called with BytecodeLength = 4340, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = dc610a7fb7c7c6ed
+    shader registered for possible reloading: dc610a7fb7c7c6ed_ps as bin -  
+  returns result = 0, handle = 0000000006F41018
+HackerDevice::CreateVertexShader called with BytecodeLength = 1708, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 67036394d6198fe5
+    shader registered for possible reloading: 67036394d6198fe5_vs as bin -  
+  returns result = 0, handle = 0000000006F41258
+HackerDevice::CreatePixelShader called with BytecodeLength = 3040, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 7c3b01c51995842c
+    shader registered for possible reloading: 7c3b01c51995842c_ps as bin -  
+  returns result = 0, handle = 0000000006F41398
+HackerDevice::CreateVertexShader called with BytecodeLength = 1212, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = eca87ada1b6f621f
+    shader registered for possible reloading: eca87ada1b6f621f_vs as bin -  
+  returns result = 0, handle = 000000000731BA98
+HackerDevice::CreatePixelShader called with BytecodeLength = 1824, handle = 0000000002024EF0, ClassLinkage = 0000000000000000
+       FNV hash = 2acac3f2105c6e50
+    shader registered for possible reloading: 2acac3f2105c6e50_ps as bin -  
+  returns result = 0, handle = 000000000731BCD8
+HackerDXGISwapChain::ResizeTarget(class HackerDXGISwapChain@0000000006C73740) called 
+  returns result = 0
+HackerDXGISwapChain::SetFullscreenState(class HackerDXGISwapChain@0000000006C73740) called with
+  Fullscreen = 0
+  Target = 0000000000000000
+->Fullscreen forced = 1 
+  returns 0
+HackerDXGISwapChain::ResizeBuffers(class HackerDXGISwapChain@0000000006C73740) called 
+  returns result = 887a0001
