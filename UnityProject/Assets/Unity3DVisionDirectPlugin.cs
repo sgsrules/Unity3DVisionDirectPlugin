@@ -24,31 +24,40 @@ public class Unity3DVisionDirectPlugin : MonoBehaviour
     private static extern int InitializeStereo();
 
     private NvAPI_Status status;
+
     void Awake()
     {
-        status = (NvAPI_Status)InitializeStereo();
+        status = (NvAPI_Status) InitializeStereo();
 
         if (status == NvAPI_Status.NVAPI_OK) Debug.Log("Stereo Handle succesully created");
         else Debug.Log("Error creating stereo Handle: " + status);
     }
 
     private bool isLeft;
-    void Update()
+
+    void OnPreRender()
     {
+     //   Camera.main.pixelRect = new Rect(0, 0, Screen.width/2f, Screen.height);
+        //  GL.Viewport(new Rect(0,0,Screen.width/2f,Screen.height/2f));
         if (status != NvAPI_Status.NVAPI_OK) return;
         if (isLeft)
         {
-            NvAPI_Status lstatus = (NvAPI_Status)ActivateLeftEye();
-            Camera.main.transform.position = Camera.main.transform.position - Camera.main.transform.right *.5f; 
+            NvAPI_Status lstatus = (NvAPI_Status) ActivateLeftEye();
+            Camera.main.transform.position = Camera.main.transform.position - Camera.main.transform.right*.2f;
             Debug.Log("Set Left eye: " + lstatus);
         }
         else
         {
-            NvAPI_Status lstatus = (NvAPI_Status)ActivateRightEye();
-            Camera.main.transform.position = Camera.main.transform.position + Camera.main.transform.right * .5f;
+            NvAPI_Status lstatus = (NvAPI_Status) ActivateRightEye();
+            Camera.main.transform.position = Camera.main.transform.position + Camera.main.transform.right*.2f;
             Debug.Log("Set right eye: " + lstatus);
         }
         isLeft = !isLeft;
+    }
+
+    void OnPostRender()
+    {
+     //   Camera.main.pixelRect = new Rect(0, 0, Screen.width, Screen.height);
     }
 }
 
